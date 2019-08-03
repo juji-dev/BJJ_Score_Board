@@ -1,0 +1,58 @@
+//APP
+
+//  FORM
+//      Competition RULE SET - Submit for more details
+//      ATHLETE NAME X2
+//      ATHLETE TEAM X2
+
+//      Division Age Drop-Down
+//      Division Belt Drop-Down
+//      Division weight Drop-Down
+//      Division Experience DropDown
+//      Division Gender DropDown
+//      Division Match Time
+//      Division Stage
+//      GI/NoGI
+
+//  IBJJF
+//      TIME
+//          Display Timer and Timer buttons
+//          Start Timer
+//          Stop Timer
+//          Reset Timer
+//          Step Timer Up & Down
+//      POINTS A/B
+//          Display points 
+//          Step points A/B up & Down
+//          Step advantages A/B up & Down
+//          Step disadvantages A/B up & Down
+//      MATCH DETAILS
+//          Belt/age/division stage/weight/Team/Combatant Name
+//      Display Winner   
+//  ADCC            https://adcombat.com/adcc-rules-regulations/
+//      Match Stage, I.E before and after points scoring sections
+//      POINTS A/B
+//          Display points 
+//          Step Negative Points A/B up & Down
+//          Step Positive Points A/B up & Down
+//      TIME
+//          Display Timer and Timer buttons
+//          Start Timer
+//          Stop Timer
+//          Reset Timer
+//          Step Timer Up & Down
+//      MATCH DETAILS
+//          Experience/age/division stage/weight/Team/Combatant Name
+//      Display Winner
+//
+//  EBI
+//      Match Stage, I.E Overtime rounds vs main stage
+//      TIME
+//          Display Timer and Timer buttons
+//          Start Timer
+//          Stop Timer
+//          Reset Timer
+//          Step Timer Up & Down
+//      MATCH DETAILS
+//          Experience/age/division stage/weight/Team/Combatant Name
+//      Display Winner
