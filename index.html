@@ -1,22 +1,176 @@
+<!-- 
+//[]      ATHLETE NAME X2
+//[]      ATHLETE TEAM X2
+//[X]      GI/NoGI
+//[X]      Rules
+//[X]      Division Age Drop-Down
+//[X]      Division Belt Drop-Down
+//[X]      Division weight Drop-Down
+//[]       Division Experience DropDown
+//[X]      Division Gender DropDown
+//[X]      Division Match Time
+//[X]      Division Stage -->
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
     <title>BJJ Score Board - JiuJitsu.dev</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
       <div id="landing">
-      <div id="landing-title"><h1>BJJ Scoreboard</h1></div>
-      <div id="landing-form"><h2>Enter Details</h2>
+      <div id="landing-title" align="center"><h1>BJJ Scoreboard</h1></div>
+      <div id="landing-form">
         <form action="Submit">
-        <h3>Select Rules:</h3>
-        <select id = "selectRules">
-            <option value = "IBJJF">IBJJF</option>
-            <option value = "ADCC">ADCC</option>
-            <option value = "EBI">EBI</option>
-        </select>
+            <table align="center">
+                <tr>
+                 <h2 align="center">Match Details:</h2></br>
+                    <td>
+                        <table>
+                            <tr>
+                                <td><strong>Rules:</strong></td>
+                                <td>
+                                    <select id = "rules">
+                                        <option value = "none">None</option>
+                                        <option style="background:blue; color:yellow" value = "ibjjf">IBJJF</option>
+                                        <option style="background:rgb(90, 0, 0); color:rgb(5, 207, 5)" value = "adcc">ADCC</option>
+                                        <option style="background:rgb(36, 36, 36); color:white" value = "ebi">EBI</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> <strong>Belt:</strong></td>
+                                <td>
+                                    <select id = "belt">
+                                            <option value = "none">None</option>
+                                            <option style="background:grey" value = "grey">grey</option>
+                                            <option style="background:yellow"    value = "blue">Yellow</option>
+                                            <option style="background:orange"  value = "purple">Orange</option>
+                                            <option style="background:green; color:white"  value = "purple">Green</option>
+                                            <option style="background:white" value = "white">White - Novice</option>
+                                            <option style="background:blue; color:white"    value = "blue">Blue - Intermediate</option>
+                                            <option style="background:purple; color:white"  value = "purple">Purple - Advanced</option>
+                                            <option style="background:brown; color:white"   value = "brown">Brown - Elite</option>
+                                            <option style="background:black; color:white"   value = "black">Black - Elite</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Gender:</strong></td>
+                                <td>
+                                    <select id = "gender">
+                                        <option value = "all">All Genders</option>
+                                        <option value = "male">Male</option>
+                                        <option value = "female">Female</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Weight:</strong></td>
+                                <td>
+                                    <select id = "weight">
+                                        <option value = "none">None</option>
+                                        <option value = "rooster">Rooster</option>
+                                        <option value = "lightFeather">Light Feather</option>
+                                        <option value = "feather">feather</option>
+                                        <option value = "light">Light</option>
+                                        <option value = "middle">Middle</option>
+                                        <option value = "middleHeavy">Middle Heavy</option>
+                                        <option value = "heavy">Heavy</option>
+                                        <option value = "superHeavy">Super Heavy</option>
+                                        <option value = "ultraHeavy">Ultra Heavy</option>
+                                        <option value = "openClass">Open Class</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Age:</strong></td>
+                                <td>
+                                    <select id = "Age">
+                                        <option value = "none">None</option>
+                                        <option value = "mightyMite1">Mighty-Mite 1</option>
+                                        <option value = "mightyMite2">Mighty-Mite 2</option>
+                                        <option value = "mightyMite3">Mighty-Mite 3</option>
+                                        <option value = "peeWee1">Pee-Wee 1</option>
+                                        <option value = "peeWee2">Pee-Wee 2</option>
+                                        <option value = "peeWee3">Pee-Wee 3</option>
+                                        <option value = "junior1">Junior 1</option>
+                                        <option value = "junior2">Junior 2</option>
+                                        <option value = "junior3">Junior 3</option>
+                                        <option value = "teen1">Teen 1</option>
+                                        <option value = "teen2">Teen 2</option>
+                                        <option value = "teen3">Teen 3</option>
+                                        <option value = "juvenile">Juvenile</option>
+                                        <option value = "adult">Adult</option>
+                                        <option value = "master1">Master 1</option>
+                                        <option value = "master2">Master 2</option>
+                                        <option value = "master3">Master 3</option>
+                                        <option value = "master4">Master 4</option>
+                                        <option value = "master5">Master 5</option>
+                                        <option value = "master6">Master 6</option>
+                                        <option value = "master7">Master 7</option>
+                                    </select>
+                                </td>
+                            </tr>
+
+                        <tr>
+                            <td><strong>Division Stage:</strong></td>
+                            <td>
+                                <select id = "stage">
+                                        <option value = "none">None</option>
+                                        <option value = "bracketMatch">Bracket Match</option>
+                                        <option value = "quarterFinal">Quarter Final</option>
+                                        <option value = "semiFinal">Semi Final</option>
+                                        <option value = "final">Final</option>
+                                        <option value = "3rdPlaceMatch">3rd Place Match</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Match Time:</strong></td>
+                            <td>
+                                <select id = "time">
+                                        <option value = "none">none</option>
+                                        <option value = "2">2</option>
+                                        <option value = "3">3</option>
+                                        <option value = "4">4</option>
+                                        <option value = "5">5</option>
+                                        <option value = "6">6</option>
+                                        <option value = "7">7</option>
+                                        <option value = "8">8</option>
+                                        <option value = "9">9</option>
+                                        <option value = "10">10</option>
+                                        <option value = "15">15</option>
+                                        <option value = "20">20</option>
+                                        <option value = "noLimit">No Limit</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr><td><strong>Gi/NoGi:</strong></td>
+                            <td>
+                            <input type="radio" name="gi" value="gi" checked> Gi<br>
+                            <input type="radio" name="gi" value="nogi"> NoGi<br>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+                <td>
+                    <table>
+                        <tr> <td><strong style="background:red;color:white">First Name:</strong></td><td><input type="text" name="redFirstName" value="" placeholder="First name"></td></tr>
+                        <tr> <td><strong style="background:red;color:white">Second Name:</strong></td><td><input type="text" name="redSecondName" value="" placeholder="Second name"></td></tr>  
+                        <tr> <td><strong style="background:red;color:white">Team:</strong></td><td><input type="text" name="redTeam" value="" placeholder="Team"></td></tr>  
+                        <tr> <td><strong style="background:blue;color:white">First Name:</strong></td><td><input type="text" name="blueFirstName" value="" placeholder="First name"></td></tr>  
+                        <tr> <td><strong style="background:blue;color:white">Second Name:</strong></td><td><input type="text" name="blueSecondName" value="" placeholder="Second name"></td></tr>  
+                        <tr> <td><strong style="background:blue;color:white">Team:</strong></td><td><input type="text" name="blueTeam" value="" placeholder="Team"></td></tr>  
+                    </table>
+                </td>
+            </tr>
+            </table>
+            <div align="center"><input type="submit" value="Submit"></div>             
         </form>
     </div>
-      </div>
+    </div>
   </body>
 </html>
+
