@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>title</title>
+    <script>
+        function populate()
+        {
+          const fs = require('fs');
+          let raw = fs.readFileSync('data.json');
+          let data = JSON.parse(raw);
+          console.log(data);
+          document.getElementById("body").innerHTML = JSON.stringify(data);
+        }
+      </script>
+  </head>
+  <body onload="populate()">
+    
+    
+    <div id="body">  Score Board Here</div>
+
+  </body>
+</html>

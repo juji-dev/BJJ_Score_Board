@@ -22,7 +22,7 @@
       <div id="landing">
       <div id="landing-title" align="center"><h1>BJJ Scoreboard</h1></div>
       <div id="landing-form">
-        <form action="Submit">
+        <form action="/main.js" method="get">
             <table align="center">
                 <tr>
                  <h2 align="center">Match Details:</h2></br>
@@ -31,7 +31,7 @@
                             <tr>
                                 <td><strong>Rules:</strong></td>
                                 <td>
-                                    <select id = "rules">
+                                    <select id = "rules" name="rules">
                                         <option value = "none">None</option>
                                         <option style="background:blue; color:yellow" value = "ibjjf">IBJJF</option>
                                         <option style="background:rgb(90, 0, 0); color:rgb(5, 207, 5)" value = "adcc">ADCC</option>
@@ -42,7 +42,7 @@
                             <tr>
                                 <td> <strong>Belt:</strong></td>
                                 <td>
-                                    <select id = "belt">
+                                    <select id = "belt" name= "belt">
                                             <option value = "none">None</option>
                                             <option style="background:grey" value = "grey">grey</option>
                                             <option style="background:yellow"    value = "blue">Yellow</option>
@@ -59,7 +59,7 @@
                             <tr>
                                 <td><strong>Gender:</strong></td>
                                 <td>
-                                    <select id = "gender">
+                                    <select id = "gender" name="gender">
                                         <option value = "all">All Genders</option>
                                         <option value = "male">Male</option>
                                         <option value = "female">Female</option>
@@ -69,7 +69,7 @@
                             <tr>
                                 <td><strong>Weight:</strong></td>
                                 <td>
-                                    <select id = "weight">
+                                    <select id = "weight" name="weight">
                                         <option value = "none">None</option>
                                         <option value = "rooster">Rooster</option>
                                         <option value = "lightFeather">Light Feather</option>
@@ -87,7 +87,7 @@
                             <tr>
                                 <td><strong>Age:</strong></td>
                                 <td>
-                                    <select id = "Age">
+                                    <select id = "age" name="age">
                                         <option value = "none">None</option>
                                         <option value = "mightyMite1">Mighty-Mite 1</option>
                                         <option value = "mightyMite2">Mighty-Mite 2</option>
@@ -117,7 +117,7 @@
                         <tr>
                             <td><strong>Division Stage:</strong></td>
                             <td>
-                                <select id = "stage">
+                                <select id = "stage" name="stage">
                                         <option value = "none">None</option>
                                         <option value = "bracketMatch">Bracket Match</option>
                                         <option value = "quarterFinal">Quarter Final</option>
@@ -130,7 +130,7 @@
                         <tr>
                             <td><strong>Match Time:</strong></td>
                             <td>
-                                <select id = "time">
+                                <select id = "time" name="time">
                                         <option value = "none">none</option>
                                         <option value = "2">2</option>
                                         <option value = "3">3</option>
@@ -147,30 +147,62 @@
                                 </select>
                             </td>
                         </tr>
-                        <tr><td><strong>Gi/NoGi:</strong></td>
-                            <td>
-                            <input type="radio" name="gi" value="gi" checked> Gi<br>
-                            <input type="radio" name="gi" value="nogi"> NoGi<br>
+                        <tr><td><strong>Gi/NoGi</strong></td>
+                            <select id = "giNoGi" name="giNoGi">
+                                <option value = "Gi">Gi</option>
+                                <option value = "No-Gi">No Gi</option>
+                            </select>
                         </td>
                     </tr>
                 </table>
             </td>
                 <td>
                     <table>
-                        <tr> <td><strong style="background:red;color:white">First Name:</strong></td><td><input type="text" name="redFirstName" value="" placeholder="First name"></td></tr>
-                        <tr> <td><strong style="background:red;color:white">Second Name:</strong></td><td><input type="text" name="redSecondName" value="" placeholder="Second name"></td></tr>  
-                        <tr> <td><strong style="background:red;color:white">Team:</strong></td><td><input type="text" name="redTeam" value="" placeholder="Team"></td></tr>  
-                        <tr> <td><strong style="background:blue;color:white">First Name:</strong></td><td><input type="text" name="blueFirstName" value="" placeholder="First name"></td></tr>  
-                        <tr> <td><strong style="background:blue;color:white">Second Name:</strong></td><td><input type="text" name="blueSecondName" value="" placeholder="Second name"></td></tr>  
-                        <tr> <td><strong style="background:blue;color:white">Team:</strong></td><td><input type="text" name="blueTeam" value="" placeholder="Team"></td></tr>  
+                        <tr> <td><strong style="background:red;color:white">First Name:</strong></td><td><input type="text" id="redFirstName" name="redFirstName" value="" placeholder="First name"></td></tr>
+                        <tr> <td><strong style="background:red;color:white">Second Name:</strong></td><td><input type="text" id="redSecondName" name="redSecondName" value="" placeholder="Second name"></td></tr>  
+                        <tr> <td><strong style="background:red;color:white">Team:</strong></td><td><input type="text" id="redTeam"name="redTeam" value="" placeholder="Team"></td></tr>  
+                        <tr> <td><strong style="background:blue;color:white">First Name:</strong></td><td><input type="text" id="blueFirstName" name="blueFirstName" value="" placeholder="First name"></td></tr>  
+                        <tr> <td><strong style="background:blue;color:white">Second Name:</strong></td><td><input type="text" id="blueSecondName" name="blueSecondName" value="" placeholder="Second name"></td></tr>  
+                        <tr> <td><strong style="background:blue;color:white">Team:</strong></td><td><input type="text" id="blueTeam" name="blueTeam" value="" placeholder="Team"></td></tr>  
                     </table>
                 </td>
             </tr>
             </table>
-            <div align="center"><input type="submit" value="Submit"></div>             
+            <div align="center"><input type="submit" ></div>             
         </form>
+        <script>
+            const electron = require('electron')
+            const {ipcRenderer} = electron
+
+            const form = document.querySelector('form')
+            form.addEventListener('submit', submitForm)
+
+            function submitForm(e)
+            {
+                e.preventDefault();
+                
+                
+                var data = {
+                    "rules" : document.querySelector('#rules').value,
+                    "belt" : document.querySelector('#belt').value,
+                    "gender" : document.querySelector('#gender').value,
+                    "weight" : document.querySelector('#weight').value,
+                    "age"    : document.querySelector('#age').value,
+                    "stage"  : document.querySelector('#stage').value,
+                    "time"   : document.querySelector('#time').value,
+                    "giNoGi" : document.querySelector('#giNoGi').value,
+                    "blueFirstName" : document.querySelector('#blueFirstName').value,
+                    "blueSecondName" : document.querySelector('#blueSecondName').value,
+                    "blueTeam" : document.querySelector('#blueTeam').value,
+                    "redFirstName" : document.querySelector('#redFirstName').value,     
+                    "redSecondName" : document.querySelector('#redSecondName').value,     
+                    "redTeam" : document.querySelector('#redTeam').value };
+            ipcRenderer.send('data:add', data)
+        }
+        </script>
     </div>
     </div>
   </body>
+
 </html>
 
