@@ -18,7 +18,7 @@
     <title>BJJ Score Board - JiuJitsu.dev</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
-  <body>
+  <body style="background:rgb(31, 31, 31); color:rgb(202, 202, 202)">
       <div id="landing">
       <div id="landing-title" align="center"><h1>BJJ Scoreboard</h1></div>
       <div id="landing-form">
@@ -32,7 +32,6 @@
                                 <td><strong>Rules:</strong></td>
                                 <td>
                                     <select id = "rules" name="rules">
-                                        <option value = "none">None</option>
                                         <option style="background:blue; color:yellow" value = "ibjjf">IBJJF</option>
                                         <option style="background:rgb(90, 0, 0); color:rgb(5, 207, 5)" value = "adcc">ADCC</option>
                                         <option style="background:rgb(36, 36, 36); color:white" value = "ebi">EBI</option>
@@ -43,7 +42,6 @@
                                 <td> <strong>Belt:</strong></td>
                                 <td>
                                     <select id = "belt" name= "belt">
-                                            <option value = "none">None</option>
                                             <option style="background:grey" value = "grey">grey</option>
                                             <option style="background:yellow"    value = "blue">Yellow</option>
                                             <option style="background:orange"  value = "purple">Orange</option>
@@ -70,7 +68,6 @@
                                 <td><strong>Weight:</strong></td>
                                 <td>
                                     <select id = "weight" name="weight">
-                                        <option value = "none">None</option>
                                         <option value = "rooster">Rooster</option>
                                         <option value = "lightFeather">Light Feather</option>
                                         <option value = "feather">feather</option>
@@ -88,7 +85,6 @@
                                 <td><strong>Age:</strong></td>
                                 <td>
                                     <select id = "age" name="age">
-                                        <option value = "none">None</option>
                                         <option value = "mightyMite1">Mighty-Mite 1</option>
                                         <option value = "mightyMite2">Mighty-Mite 2</option>
                                         <option value = "mightyMite3">Mighty-Mite 3</option>
@@ -118,7 +114,6 @@
                             <td><strong>Division Stage:</strong></td>
                             <td>
                                 <select id = "stage" name="stage">
-                                        <option value = "none">None</option>
                                         <option value = "bracketMatch">Bracket Match</option>
                                         <option value = "quarterFinal">Quarter Final</option>
                                         <option value = "semiFinal">Semi Final</option>
@@ -131,7 +126,7 @@
                             <td><strong>Match Time:</strong></td>
                             <td>
                                 <select id = "time" name="time">
-                                        <option value = "none">none</option>
+                                        <option value = "1">1</option>
                                         <option value = "2">2</option>
                                         <option value = "3">3</option>
                                         <option value = "4">4</option>
@@ -148,6 +143,7 @@
                             </td>
                         </tr>
                         <tr><td><strong>Gi/NoGi</strong></td>
+                            <td>
                             <select id = "giNoGi" name="giNoGi">
                                 <option value = "Gi">Gi</option>
                                 <option value = "No-Gi">No Gi</option>
@@ -158,12 +154,16 @@
             </td>
                 <td>
                     <table>
-                        <tr> <td><strong style="background:red;color:white">First Name:</strong></td><td><input type="text" id="redFirstName" name="redFirstName" value="" placeholder="First name"></td></tr>
-                        <tr> <td><strong style="background:red;color:white">Second Name:</strong></td><td><input type="text" id="redSecondName" name="redSecondName" value="" placeholder="Second name"></td></tr>  
-                        <tr> <td><strong style="background:red;color:white">Team:</strong></td><td><input type="text" id="redTeam"name="redTeam" value="" placeholder="Team"></td></tr>  
-                        <tr> <td><strong style="background:blue;color:white">First Name:</strong></td><td><input type="text" id="blueFirstName" name="blueFirstName" value="" placeholder="First name"></td></tr>  
-                        <tr> <td><strong style="background:blue;color:white">Second Name:</strong></td><td><input type="text" id="blueSecondName" name="blueSecondName" value="" placeholder="Second name"></td></tr>  
-                        <tr> <td><strong style="background:blue;color:white">Team:</strong></td><td><input type="text" id="blueTeam" name="blueTeam" value="" placeholder="Team"></td></tr>  
+                        <div style="background:red ">
+                            <tr> <td><strong style="background:red;color:white">First Name:</strong></td><td><input type="text" id="redFirstName" name="redFirstName" value="" placeholder="First name"></td></tr>
+                            <tr> <td><strong style="background:red;color:white">Second Name:</strong></td><td><input type="text" id="redSecondName" name="redSecondName" value="" placeholder="Second name"></td></tr>  
+                            <tr> <td><strong style="background:red;color:white">Team:</strong></td><td><input type="text" id="redTeam"name="redTeam" value="" placeholder="Team"></td></tr>  
+                        </div>
+                        <div style="background:blue ">
+                            <tr> <td><strong style="background:blue;color:white">First Name:</strong></td><td><input type="text" id="blueFirstName" name="blueFirstName" value="" placeholder="First name"></td></tr>  
+                            <tr> <td><strong style="background:blue;color:white">Second Name:</strong></td><td><input type="text" id="blueSecondName" name="blueSecondName" value="" placeholder="Second name"></td></tr>  
+                            <tr> <td><strong style="background:blue;color:white">Team:</strong></td><td><input type="text" id="blueTeam" name="blueTeam" value="" placeholder="Team"></td></tr>  
+                        </div>
                     </table>
                 </td>
             </tr>

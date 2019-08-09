@@ -25,7 +25,27 @@ ipcMain.on('data:add', function(event, data){
   const fs = require('fs');
   let formData = JSON.stringify(data);
   fs.writeFileSync('data.json', formData)
-  win.loadFile('scoreBoard.html') 
+  var scoreBoard;
+  if(data.rules === "ibjjf")
+  {
+    win.loadFile('ibjjf.html') 
+  }else if(data.rules === "adcc")
+  {
+    win.loadFile('scoreBoard.html') 
+  }
+  else if(data.rules === "adcc")
+  {
+    win.loadFile('scoreBoard.html') 
+  }
+  else{
+   win.loadFile('scoreBoard.html') 
+  }
+
+});
+
+//Catch Data
+ipcMain.on('restart', function(){
+  win.loadFile('index.html') 
 });
 
 const mainMenuTemplate = [{

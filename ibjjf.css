@@ -1,0 +1,24 @@
+#redScore
+{
+    font-size:2em;
+    background:red;
+}
+#blueScore
+{
+    font-size:2em;
+    background:blue;
+}
+
+.points
+{
+    font-style: oblique;
+    font-size:5em;
+}
+
+#timer
+{
+    font-style: oblique;
+    font-size:5em;
+}
+
+
