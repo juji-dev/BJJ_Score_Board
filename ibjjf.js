@@ -12,22 +12,16 @@ function populate(){
     let raw = fs.readFileSync('data.json');
     data = JSON.parse(raw);
     console.log(data);
-    setAthleteNames()
-    setAthleteTeams()
+    setAthletes()
     setMatchInformation()
     setTime()
     setMatchStage()
     setInterval(countDown, 1000)
 }
 
-function setAthleteNames(){
-    document.getElementById("redName").innerHTML =  (data.redFirstName + " " + data.redSecondName).toUpperCase();
-    document.getElementById("blueName").innerHTML =  (data.blueFirstName + " " + data.blueSecondName).toUpperCase();
-}
-
-function setAthleteTeams(){
-    document.getElementById("redTeam").innerHTML = data.redTeam.toUpperCase();   
-    document.getElementById("blueTeam").innerHTML =  data.blueTeam.toUpperCase();     
+function setAthletes(){
+    document.getElementById("redAthlete").innerHTML =  (data.redFirstName + " " + data.redSecondName).toUpperCase() + " - " + data.redTeam.toUpperCase();
+    document.getElementById("blueAthlete").innerHTML =  (data.blueFirstName + " " + data.blueSecondName).toUpperCase() +" - " + data.blueTeam.toUpperCase();
 }
 
 function setMatchStage(){

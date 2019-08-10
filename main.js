@@ -31,14 +31,14 @@ ipcMain.on('data:add', function(event, data){
     win.loadFile('ibjjf.html') 
   }else if(data.rules === "adcc")
   {
-    win.loadFile('scoreBoard.html') 
+    win.loadFile('index.html') 
   }
   else if(data.rules === "adcc")
   {
-    win.loadFile('scoreBoard.html') 
+    win.loadFile('index.html') 
   }
   else{
-   win.loadFile('scoreBoard.html') 
+   win.loadFile('index.html') 
   }
 
 });

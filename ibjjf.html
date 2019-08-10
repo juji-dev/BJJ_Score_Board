@@ -3,50 +3,78 @@
   <head><meta charset="UTF-8"><link href="ibjjf.css" rel="stylesheet" type="text/css"><title>BJJ Score Board</title><script src="ibjjf.js"></script></head>
   <body id="body" onload="populate()">
   <table>
-<!--SCORE-->
-    <tr>
-      <div id="score">
-        <td><div id="redScore">
-          <div class="points" id="redPoints">0</div>
-            <button type="button" id="incRedPoints"  onclick="incRed(2,0)">+2</button>   
-            <button type="button" id="incRedPoints" onclick="incRed(3,0)">+3</button>
-            <button type="button" id="incRedPoints" onclick="incRed(4,0)">+4</button>      
-            <div id="redAdvantage">0</div><button type="button" id="incRedAdvantage" onclick="incRed(1,1)">+1</button>
-          <div id="redPenalty">0</div><button type="button" id="incRedPenalty" onclick="incRed(1,2)">+1</button>
-        </div></td>
-      <td><div id="blueScore">
-        <div class="points" id="bluePoints">0</div>
-        <button type="button" id="incBluePoints" onclick="incBlue(2,0)">+2</button>
-        <button type="button" id="incBluePoints" onclick="incBlue(3,0)">+3</button>
-        <button type="button" id="incBluePoints" onclick="incBlue(4,0)">+4</button>     
-        <div id="blueAdvantage">0</div><button type="button" id="incBlueAdvantage" onclick="incBlue(1,1)">+1</button>    
-        <div id="bluePenalty">0</div><button type="button" id="incBluePenalty" onclick="incBlue(1,2)">+1</button>
-      </div></td>
-    </div>
-  </tr> 
 <!--INFO-->  
-  <tr>
-    <td>
-      <div id="blueName"></div>
-      <div id="blueTeam"></div>
-      <div id="redName"></div>
-      <div id="redTeam"></div>
-      <div id="matchInfo"></div>
-      <div id="stage"></div>
-    </td>
+  <tr><div id="matchInfo"></div></tr>
+    <tr>
+      <!--SCORE-->
+        <td><div id="redScore">  <table><tr> 
+              <td><div class="penalty" id="redPenalty">0</div>
+                <button class="pointsButton" type="button" id="incRedPenalty" onclick="incRed(-1,2)">-1</button>
+                <button class="pointsButton"type="button" id="incRedPenalty" onclick="incRed(1,2)">+1</button></td>           
+              <td><div class="advantage" id="redAdvantage">0</div>
+                <button class="pointsButton" type="button" id="incRedAdvantage" onclick="incRed(-1,1)">-1</button>
+                <button class="pointsButton" type="button" id="incRedAdvantage" onclick="incRed(1,1)">+1</button></td>
+              <td><div class="points" id="redPoints">0</div>
+                <button class="pointsButton" type="button" id="incRedPoints" onclick="incRed(-1,0)">-1</button>
+            <button class="pointsButton" type="button" id="incRedPoints"  onclick="incRed(2,0)">+2</button>   
+            <button class="pointsButton" type="button" id="incRedPoints" onclick="incRed(3,0)">+3</button>
+            <button class="pointsButton"type="button" id="incRedPoints" onclick="incRed(4,0)">+4</button></td>      
+        </tr></table></div></td>
+      <td><div id="blueScore"><table><tr> 
+        <td><div class="points" id="bluePoints">0</div>
+        <button class="pointsButton" type="button" id="incBluePoints" onclick="incBlue(2,0)">+2</button>
+        <button class="pointsButton" type="button" id="incBluePoints" onclick="incBlue(3,0)">+3</button>
+        <button class="pointsButton" type="button" id="incBluePoints" onclick="incBlue(4,0)">+4</button>
+        <button class="pointsButton" type="button" id="incBluePoints" onclick="incBlue(-1,0)">-1</button>      </td>
+        <td><div class="advantage" id="blueAdvantage">0</div>
+          <button class="pointsButton" type="button" id="incBlueAdvantage" onclick="incBlue(1,1)">+1</button>
+          <button class="pointsButton" type="button" id="incBlueAdvantage" onclick="incBlue(-1,1)">-1</button>    </td>
+        <td><div class="penalty" id="bluePenalty">0</div>
+          <button class="pointsButton" type="button" id="incBluePenalty" onclick="incBlue(1,2)">+1</button> 
+          <button class="pointsButton" type="button" id="incBluePenalty" onclick="incBlue(-1,2)">-1</button> </td>
+     </tr></table></div></td>
   </tr>
-<!--Time-->
-  <tr><td>
-    <div id="timer">
-      <div id="time">time here </div>
-      <button type="button" id="startTime" onclick="setStart()"> Start</button>
-      <button type="button" id="pauseTime" onclick="setPause()">Pause</button>
-      <button type="button" id="resetTime" onclick="resetTime()">Reset</button>
-    </div></td>
+  <tr> 
+    <td><div class="fighters" id="blueAthlete"> </div></td>
+    <td><div class="fighters" id="redAthlete">  </div></td>
   </tr>
-  <tr>
-    <td><button type="button" id="restart" onclick="restart()">Restart</button></td>
-  </tr>
+  </table>
+  <table>
+    <tr><!-- ROW 1 --> 
+        <td><!-- Col 1 -->
+          <table>     
+              <tr>
+                  <div id="stage"></div>
+              </tr>     
+            <tr>
+              <button class="timerButtons" type="button" id="startTime" onclick="setStart()"> Start</button>
+              <button class="timerButtons" type="button" id="pauseTime" onclick="setPause()">Pause</button>
+              <button class="timerButtons" type="button" id="resetTime" onclick="resetTime()">Reset</button>
+              <button class="timerButtons" type="button" id="restart" onclick="restart()">Exit to Menu</button>
+          </tr>
+        </table> 
+        </td>
+        <td><!-- Col 2-->
+            <div id="timer"><div id="time">time here </div></div>
+        </td>
+    </tr>
   </table>
   </body>
 </html>
+
+<!--
+
+  <tr>
+      <td>
+      <div id="timer">
+        <div id="time">time here </div>
+        <button type="button" id="startTime" onclick="setStart()"> Start</button>
+        <button type="button" id="pauseTime" onclick="setPause()">Pause</button>
+        <button type="button" id="resetTime" onclick="resetTime()">Reset</button>
+      </div></td>
+    </tr>
+    <tr>
+      <td></td>
+    </tr>
+
+-->
