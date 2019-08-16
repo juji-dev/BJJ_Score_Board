@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head><meta charset="UTF-8"><link href="ibjjf.css" rel="stylesheet" type="text/css"><title>BJJ Score Board</title><script src="ibjjf.js"></script></head>
+  <head><meta charset="UTF-8"><link href="../styles/ibjjf.css" rel="stylesheet" type="text/css"><title>BJJ Score Board</title><script src="../logic/boardManager.js"></script></head>
   <body id="body" onload="populate()">
   <table>
 <!--INFO-->  
@@ -57,6 +57,10 @@
         <td><!-- Col 2-->
             <div id="timer"><div id="time">time here </div></div>
         </td>
+        <td><!-- Col 2-->
+          <button class="timerButtons" type="button"  onclick="declareWinner(0)"> Winner Red</button>
+          <button class="timerButtons" type="button"  onclick="declareWinner(1)">Winner Blue</button>
+      </td>
     </tr>
   </table>
   </body>

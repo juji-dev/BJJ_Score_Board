@@ -1,0 +1,41 @@
+@font-face {
+    font-family: 'ScoreFont';
+    src:  url('../fonts/Heavy_Font.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#winner{
+    font-family:'ScoreFont'; 
+    font-style: bold;
+    font-size:5em;
+    color:rgb(255, 195, 195);
+    text-align: center;
+}
+
+#declaration{
+    font-family:'ScoreFont'; 
+    font-style: bold;
+    font-size:5em;
+    color:rgb(255, 195, 195);
+    text-align: center;
+}
+
+#menu{
+    font-family:'ScoreFont'; 
+    font-style: bold;
+    font-size:5em;
+    color:rgb(255, 195, 195);
+    text-align: center;
+}
+
+#restart{
+    font-family: 'ScoreFont';
+    color:rgb(223, 223, 223);
+    background:rgba(42, 42, 42, 0.319);
+    border: none;
+    padding: 10px 25px; 
+    font-size: 20px;
+    text-align:center;
+    margin:0 auto;
+}

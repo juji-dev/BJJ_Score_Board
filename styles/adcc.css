@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'ScoreFont';
-    src:  url('fonts/Heavy_Font.otf') format('opentype');
+    src:  url('../fonts/Heavy_Font.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
@@ -12,7 +12,7 @@
     height: 50vh;
     font-size:2em;
     background:rgb(192, 59, 59);
-    float:left;
+    float:left;  
 }
 #blueScore
 {
@@ -24,7 +24,7 @@
     float:right;
 }
 
-.points
+#redPoints
 {
     font-family:'ScoreFont'; 
     position: relative;
@@ -32,30 +32,40 @@
     font-style: bold;
     font-size:8.3em;
     color:white;
-    text-align: center;
+    text-align: right;
 }
 
-.advantage
+#bluePoints
 {
     font-family:'ScoreFont'; 
     position: relative;
-    width:13vw;
+    width:25vw;
     font-style: bold;
-    font-size:6em;
-    color:rgb(198, 255, 187);
-    text-align: center;
+    font-size:8.3em;
+    color:white;
+    text-align: right;
 }
 
-.penalty
-{
+#bluePenalty{
+    font-family:'ScoreFont'; 
+    position: relative;
+    width:20vw;
+    font-style: bold;
+    font-size:5em;
+    color:rgb(255, 195, 195);
+    text-align: right;
+}
+
+#redPenalty{
     font-family:'ScoreFont'; 
     position: relative;
     width:10vw;
     font-style: bold;
     font-size:5em;
     color:rgb(255, 195, 195);
-    text-align: center;
+    text-align: right;
 }
+
 #matchInfo
 {
     font-family:'ScoreFont';
@@ -91,9 +101,7 @@
 }
 
 .pointsButton:hover{
-
-    color:rgba(107, 236, 72, 0.701);
-  
+    color:rgba(107, 236, 72, 0.701); 
 }
 
 .pointsButton{
@@ -126,9 +134,7 @@
 
 
 .timerButtons:hover{
-
     color:rgba(107, 236, 72, 0.701);
-  
 }
 
 .timerButtons{
@@ -140,7 +146,21 @@
     font-size: 20px;
     text-align:left;
     margin:0 auto;
-
 }
+
+#incBluePoints
+{
+    float:left;  
+}
+#incBluePenalty{
+    float:right;  
+}
+#incRedPoints{
+    float:right;  
+}
+#incRedPenalty{
+    float:left;  
+}
+
 
 

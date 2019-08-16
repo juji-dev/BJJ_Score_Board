@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link href="../styles/adcc.css" rel="stylesheet" type="text/css"><title>BJJ Score Board</title><script src="../logic/boardManager.js"></script></head>
+  <body id="body" onload="populate()">
+  <table>
+<!--INFO-->  
+  <tr><div id="matchInfo"></div></tr>
+    <tr>
+      <!--SCORE-->
+        <td><div id="redScore">  <table><tr> 
+              <td><div class="penalty" id="redPenalty">0</div>
+              </td>           
+              <td><div class="points" id="redPoints">0</div></td>      
+        </tr>
+        <tr>
+          <td><div id="incRedPenalty">
+              <button class="pointsButton" type="button"  onclick="incRed(-1,2)">-1</button>
+              <button class="pointsButton"type="button"  onclick="incRed(1,2)">+1</button>     
+            </div>
+          </td>
+          <td><div id="incRedPoints">
+              <button class="pointsButton" type="button" onclick="incRed(-1,0)">-1</button>
+              <button class="pointsButton" type="button"  onclick="incRed(2,0)">+2</button>   
+              <button class="pointsButton" type="button" onclick="incRed(3,0)">+3</button>
+              <button class="pointsButton"type="button"  onclick="incRed(4,0)">+4</button>
+            </div>
+            </td>
+        </tr>
+      </table></div></td>
+      <td><div id="blueScore"><table><tr> 
+        <td><div class="points" id="bluePoints">0</div></td>
+        <td><div class="penalty" id="bluePenalty">0</div>
+         </td>
+     </tr>
+    <tr>
+      <td>
+          <div id="incBluePoints">
+          <button class="pointsButton" type="button"  onclick="incBlue(2,0)">+2</button>
+          <button class="pointsButton" type="button" onclick="incBlue(3,0)">+3</button>
+          <button class="pointsButton" type="button" onclick="incBlue(4,0)">+4</button>
+          <button class="pointsButton" type="button" onclick="incBlue(-1,0)">-1</button>
+        </div>
+        </td>
+          <td>
+            <div id="incBluePenalty">
+              <button class="pointsButton" type="button"  onclick="incBlue(1,2)">+1</button> 
+              <button class="pointsButton" type="button"  onclick="incBlue(-1,2)">-1</button> 
+        </div>
+      </td>
+    </tr>
+    </table></div></td>
+  </tr>
+  <tr> 
+    <td><div class="fighters" id="blueAthlete"> </div></td>
+    <td><div class="fighters" id="redAthlete">  </div></td>
+  </tr>
+  </table>
+
+<!--   INSERT OVERTIME BUTTON    -->
+ 
+
+  <table>
+    <tr><!-- ROW 1 --> 
+        <td><!-- Col 1 -->
+          <table>     
+              <tr>
+                  <div id="stage"></div>
+              </tr>     
+            <tr>
+              <button class="timerButtons" type="button" id="startTime" onclick="setStart()"> Start</button>
+              <button class="timerButtons" type="button" id="pauseTime" onclick="setPause()">Pause</button>
+              <button class="timerButtons" type="button" id="resetTime" onclick="resetTime()">Reset</button>
+              <button class="timerButtons" type="button" id="resetTime" onclick="setOverTime()">Set Over Time</button>
+              <button class="timerButtons" type="button" id="restart" onclick="restart()">Exit to Menu</button>
+          </tr>
+        </table> 
+        </td>
+        <td><!-- Col 2-->
+            <div id="timer"><div id="time">time here </div></div>
+        </td>
+        <td><!-- Col 2-->
+          <button class="timerButtons" type="button"  onclick="declareWinner(0)"> Winner Red</button>
+          <button class="timerButtons" type="button"  onclick="declareWinner(1)">Winner Blue</button>
+      </td>
+    </tr>
+  </table>
+  </body>
+</html>

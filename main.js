@@ -24,28 +24,26 @@ function createWindow () {
 ipcMain.on('data:add', function(event, data){
   const fs = require('fs');
   let formData = JSON.stringify(data);
-  fs.writeFileSync('data.json', formData)
+  fs.writeFileSync('data/data.json', formData)
   var scoreBoard;
-  if(data.rules === "ibjjf")
-  {
-    win.loadFile('ibjjf.html') 
-  }else if(data.rules === "adcc")
-  {
-    win.loadFile('index.html') 
-  }
-  else if(data.rules === "adcc")
-  {
-    win.loadFile('index.html') 
-  }
-  else{
+  if(data.rules === "ibjjf"){
+    win.loadFile('mark_up/ibjjf.html') 
+  }else if(data.rules === "adcc"){
+    win.loadFile('mark_up/adcc.html') 
+  }else{
    win.loadFile('index.html') 
   }
-
 });
 
 //Catch Data
 ipcMain.on('restart', function(){
   win.loadFile('index.html') 
+});
+ipcMain.on('winnerBlue', function(){
+  win.loadFile('mark_up/winnerBlue.html') 
+});
+ipcMain.on('winnerRed', function(){
+  win.loadFile('mark_up/winnerRed.html') 
 });
 
 const mainMenuTemplate = [{

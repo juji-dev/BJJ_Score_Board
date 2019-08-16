@@ -9,7 +9,7 @@ var blueScore = {"penalty" : 0,"advantage" : 0,"points" : 0}
 
 function populate(){
     const fs = require('fs');
-    let raw = fs.readFileSync('data.json');
+    let raw = fs.readFileSync('data/data.json');
     data = JSON.parse(raw);
     console.log(data);
     setAthletes()
@@ -27,6 +27,7 @@ function setAthletes(){
 function setMatchStage(){
     document.getElementById("stage").innerHTML =  data.stage.toUpperCase(); 
 }
+
 
 function setMatchInformation(){ 
     var matchInfo = data.giNoGi + " " +data.gender + " " +  data.age + " " +data.belt + " " + data.weight;
@@ -52,7 +53,38 @@ function resetTime(){
     play = false;
     currentTime = startTime; 
     document.getElementById("time").innerHTML =  currentTime.toString().toHHMMSS();
+    setMatchStage();
+}
 
+function declareWinner(winner){
+    const electron = require('electron')
+    const {ipcRenderer} = electron    
+    if(winner==0){
+        ipcRenderer.send('winnerRed')
+    }else{
+        ipcRenderer.send('winnerBlue')
+    }
+}
+
+function getDeclaration(index){
+    const fs = require('fs');
+    let raw = fs.readFileSync('data/data.json');
+    data = JSON.parse(raw);
+    var winnerInfo;
+    if(index == 0){
+        winnerInfo = data.redFirstName + " " +  data.redSecondName + "\n" +data.redTeam;
+    }else{
+        winnerInfo = data.blueFirstName + " " +  data.blueSecondName + "\n" +data.blueTeam;    
+    }  
+    winnerInfo.toString();
+    document.getElementById("declaration").innerHTML = winnerInfo.toUpperCase();  
+}
+
+function setOverTime(){
+    play = false;
+    currentTime = startTime * 0.5; 
+    document.getElementById("time").innerHTML =  currentTime.toString().toHHMMSS();
+    document.getElementById("stage").innerHTML = "OVERTIME"; 
 }
 
 function countDown(){
