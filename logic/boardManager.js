@@ -72,9 +72,9 @@ function getDeclaration(index){
     data = JSON.parse(raw);
     var winnerInfo;
     if(index == 0){
-        winnerInfo = data.redFirstName + " " +  data.redSecondName + "\n" +data.redTeam;
+        winnerInfo = data.redFirstName[0] + " " +  data.redSecondName + "<br>" +data.redTeam;
     }else{
-        winnerInfo = data.blueFirstName + " " +  data.blueSecondName + "\n" +data.blueTeam;    
+        winnerInfo = data.blueFirstName[0] + " " +  data.blueSecondName + "<br>" +data.blueTeam;    
     }  
     winnerInfo.toString();
     document.getElementById("declaration").innerHTML = winnerInfo.toUpperCase();  
