@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/josephbreslin/BJJ_Score_Board#readme",
   "devDependencies": {
-    "electron": "^6.0.0",
+    "electron": "^9.4.0",
     "electron-packager": "^14.0.4"
   }
 }
